@@ -33,13 +33,11 @@ function TaxiQueue() {
 
 	function taxiDepart() {
 
-		if (taxiQueue > 0 && passengerQueue >= 12 ) {
+		if (taxiQueue > 12 && passengerQueue >= 0 ) {
 			taxiQueue--;
 		
 		  }
-		
 	}
-
 	return {
 		joinQueue,
 		leaveQueue,

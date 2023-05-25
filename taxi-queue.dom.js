@@ -15,9 +15,9 @@ const departBtn = document.querySelector(".depart");//depart button
 
 const myDepartMessage = document.querySelector(".departMessage");//depart message alert
 
-let counterPassenger = 0;
+let counterPassenger = 0;//counter for the passengers 
 
-let counterTaxi = 0;
+let counterTaxi = 0;//counter for the taxi
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -28,8 +28,9 @@ joinBtnPassengers.addEventListener("click", ()=>{
 })
 
 leaveBtn.addEventListener("click", ()=>{
-    counterPassenger--;
-    counterPassenger >= 0;
+    if (counterPassenger > 0) {
+        counterPassenger--;
+      }
     passengerValueDisplay.innerHTML = counterPassenger;
 })
 
@@ -40,18 +41,35 @@ leaveBtn.addEventListener("click", ()=>{
 joinQueBtnTaxi.addEventListener("click", () => {
     
 
-    
-    counterPassenger ++;
+
+    counterTaxi ++;
     taxiQueValueDisplay >= 12;
-    taxiQueValueDisplay.innerHTML = counterPassenger;
+    taxiQueValueDisplay.innerHTML =  counterTaxi;
 })
+
+function departTaxi() {
+    if (counterPassenger >= 12 && counterTaxi > 0) {
+      counterPassenger -= 12;
+      counterTaxi--;
+      myDepartMessage.innerHTML = "Taxi departed successfully.";
+    } else {
+      myDepartMessage.innerHTML = "Not enough passengers or no taxi available.";
+    }
+    passengerValueDisplay.innerHTML = counterPassenger;
+    taxiQueValueDisplay.innerHTML = counterTaxi;
+  }
+  
+
 
 /////////////////////////////////////////////////////////////////////////////////////////
-departBtn.addEventListener("click", () => {
-   
-})
+departBtn.addEventListener("click", departTaxi())
 
 
+
+
+  
+  
+  
 
 
 
