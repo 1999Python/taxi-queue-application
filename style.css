@@ -1,24 +1,24 @@
-body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: darkgray
-}
 
 
 .count {
 	font-size: 4em;
 	padding: 0.1em;
-	border: 2px solid;
-	background-color: orchid;
-	border-radius: 0.1em;
+
 }
 
 .section {
 	flex: 1;
-	background-color: steelblue;
+	border: solid 3px blue;
 	padding: 2em;
 	margin: 1em;
 	border-radius: 0.5em;
+	background-image: linear-gradient(yellow, red);
 }
+
+
+  .section:hover { border-width: 12px;
+width: 450px;
+height: 550px; }
 
 button {
 	padding: 1em;
